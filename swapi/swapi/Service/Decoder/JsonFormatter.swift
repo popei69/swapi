@@ -23,4 +23,15 @@ final class JsonFormatter {
             return .failure(.wrongFormat)
         }
     }
+    
+    func decode<T: Decodable>(_ result: Result<Data,ErrorType>) -> Result<T,ErrorType> {
+        
+        switch result {
+        case .failure(let error):
+            return .failure(error)
+            
+        case .success(let data):
+            return decode(data)
+        }
+    }
 }

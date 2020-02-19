@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1435D00223FD85C3006C1CF3 /* CharacterFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */; };
 		F17160E623FD198E00D2F804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17160E523FD198E00D2F804 /* AppDelegate.swift */; };
 		F17160E823FD198E00D2F804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17160E723FD198E00D2F804 /* SceneDelegate.swift */; };
 		F17160EA23FD198E00D2F804 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17160E923FD198E00D2F804 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFetcher.swift; sourceTree = "<group>"; };
 		F17160E223FD198E00D2F804 /* swapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17160E523FD198E00D2F804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17160E723FD198E00D2F804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1435D00023FD84A2006C1CF3 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				F171610D23FD1C4000D2F804 /* JsonFormatter.swift */,
+			);
+			path = Decoder;
+			sourceTree = "<group>";
+		};
 		F17160D923FD198E00D2F804 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 			children = (
 				F171610823FD19C700D2F804 /* Film.swift */,
 				F171610A23FD1A8000D2F804 /* Character.swift */,
+				1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,8 +148,8 @@
 		F171610C23FD1C1500D2F804 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1435D00023FD84A2006C1CF3 /* Decoder */,
 				F171611C23FD3FDB00D2F804 /* Network */,
-				F171610D23FD1C4000D2F804 /* JsonFormatter.swift */,
 				F171611823FD3B6200D2F804 /* WordCounter.swift */,
 			);
 			path = Service;
@@ -264,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1435D00223FD85C3006C1CF3 /* CharacterFetcher.swift in Sources */,
 				F171611E23FD405300D2F804 /* RequestFactory.swift in Sources */,
 				F17160EA23FD198E00D2F804 /* ViewController.swift in Sources */,
 				F171611923FD3B6200D2F804 /* WordCounter.swift in Sources */,
