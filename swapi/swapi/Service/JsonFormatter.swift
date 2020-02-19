@@ -10,6 +10,7 @@ import Foundation
 
 enum ErrorType: Error {
     case wrongFormat
+    case wrongUrlRequest
 }
 
 final class JsonFormatter {

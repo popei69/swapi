@@ -23,6 +23,7 @@
 		F171611723FD3A5A00D2F804 /* Film.json in Resources */ = {isa = PBXBuildFile; fileRef = F171611623FD3A5A00D2F804 /* Film.json */; };
 		F171611923FD3B6200D2F804 /* WordCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171611823FD3B6200D2F804 /* WordCounter.swift */; };
 		F171611B23FD3BC900D2F804 /* WordCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171611A23FD3BC900D2F804 /* WordCounterTests.swift */; };
+		F171611E23FD405300D2F804 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171611D23FD405300D2F804 /* RequestFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		F171611623FD3A5A00D2F804 /* Film.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Film.json; sourceTree = "<group>"; };
 		F171611823FD3B6200D2F804 /* WordCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounter.swift; sourceTree = "<group>"; };
 		F171611A23FD3BC900D2F804 /* WordCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounterTests.swift; sourceTree = "<group>"; };
+		F171611D23FD405300D2F804 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		F171610C23FD1C1500D2F804 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				F171611C23FD3FDB00D2F804 /* Network */,
 				F171610D23FD1C4000D2F804 /* JsonFormatter.swift */,
 				F171611823FD3B6200D2F804 /* WordCounter.swift */,
 			);
@@ -148,6 +151,14 @@
 				F171611623FD3A5A00D2F804 /* Film.json */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F171611C23FD3FDB00D2F804 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F171611D23FD405300D2F804 /* RequestFactory.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F171611E23FD405300D2F804 /* RequestFactory.swift in Sources */,
 				F17160EA23FD198E00D2F804 /* ViewController.swift in Sources */,
 				F171611923FD3B6200D2F804 /* WordCounter.swift in Sources */,
 				F171610923FD19C700D2F804 /* Film.swift in Sources */,
