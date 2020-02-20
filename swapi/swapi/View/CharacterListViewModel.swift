@@ -13,8 +13,8 @@ protocol CharacterListViewModelInput {
 }
 
 protocol CharacterListViewModelOutput {
-    var characters: Observable<[Character]> { get set }
-    var errorHandler: Observable<Error?> { get set }
+    var characters: Observable<[Character]> { get }
+    var errorHandler: Observable<Error?> { get }
 }
 
 protocol CharacterListViewModelType {
@@ -24,7 +24,7 @@ protocol CharacterListViewModelType {
     func fetchCharacters(_ fetchable: CharacterFetchable)
 }
 
-final class CharacterListViewModel: CharacterListViewModelType {
+final class CharacterListViewModel: NSObject, CharacterListViewModelType {
     var input: CharacterListViewModelInput
     var output: CharacterListViewModelOutput
     
@@ -37,9 +37,10 @@ final class CharacterListViewModel: CharacterListViewModelType {
         var errorHandler = Observable<Error?>(nil)
     }
     
-    init() {
+    override init() {
         self.input = Input()
         self.output = Output()
+        super.init()
     }
     
     func fetchCharacters(_ fetchable: CharacterFetchable) {
@@ -49,7 +50,7 @@ final class CharacterListViewModel: CharacterListViewModelType {
             case .failure(let error):
                 self?.output.errorHandler.value = error
             case .success(let response):
-                self?.output.characters.value = response.results
+                self?.output.characters.value = response.sortedCharacters
             }
         }
     }

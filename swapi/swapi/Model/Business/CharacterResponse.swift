@@ -14,3 +14,9 @@ struct CharacterResponse: Codable {
     let previous: String?
     let results: [Character]
 }
+
+extension CharacterResponse {
+    var sortedCharacters: [Character] {
+        return results.sorted(by: { $0.name < $1.name })
+    }
+}
