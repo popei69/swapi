@@ -9,12 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var viewModel: CharacterListViewModelType!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // bind elements to datasource
+        self.bindView(to: viewModel)
+        viewModel.fetchCharacters(CharacterFetcher())
     }
-
-
+    
+    private func bindView(to viewModel: CharacterListViewModelType) {
+        viewModel.output.characters.replay(self) { characters in
+            print(characters)
+        }
+        
+        viewModel.output.errorHandler.subscribe(self) { error in
+            print(error)
+        }
+    }
 }
 
+extension UIViewController: Identifiable {
+    var id: String { return self.description }
+}

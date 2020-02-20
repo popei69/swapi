@@ -8,12 +8,6 @@
 
 import Foundation
 
-struct CharacterResponse: Codable {
-    let count: Int
-    let next: String
-    let previous: String
-    let results: [Character] 
-}
 
 protocol CharacterFetchable {
     func getCharacters(_ page: Int?, completion: @escaping (Result<CharacterResponse, ErrorType>) -> ())
@@ -21,12 +15,12 @@ protocol CharacterFetchable {
 
 class CharacterFetcher: CharacterFetchable {
  
-    private let host = "https://swapi.co/"
+    private let host = "https://swapi.co"
     private var task : URLSessionTask?
     
     private func makeUrlString(_ page: Int?) -> String? {
         var urlComponents = URLComponents(string: host)
-        urlComponents?.path = "api/people"
+        urlComponents?.path = "/api/people"
         
         if let page = page {
             urlComponents?.queryItems = [URLQueryItem(name: "page", value: "\(page)")]
