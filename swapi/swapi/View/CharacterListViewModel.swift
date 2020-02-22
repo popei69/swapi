@@ -15,6 +15,7 @@ protocol CharacterListViewModelInput {
 protocol CharacterListViewModelOutput {
     var characters: Observable<[Character]> { get }
     var errorHandler: Observable<Error?> { get }
+    var showDetail: Observable<Character?> { get }
 }
 
 protocol CharacterListViewModelType {
@@ -37,6 +38,7 @@ final class CharacterListViewModel: NSObject, CharacterListViewModelType {
     struct Output: CharacterListViewModelOutput {
         var characters = Observable<[Character]>([])
         var errorHandler = Observable<Error?>(nil)
+        var showDetail = Observable<Character?>(nil)
     }
     
     init(fetchable: CharacterFetchable = CharacterFetcher()) {
@@ -44,6 +46,14 @@ final class CharacterListViewModel: NSObject, CharacterListViewModelType {
         self.output = Output()
         self.characterFetchable = fetchable
         super.init()
+        
+        self.input.tapIndex.subscribe(self) { [weak self] indexPath in
+            guard let row = indexPath?.row else {
+                return
+            } 
+            
+            self?.output.showDetail.value = self?.output.characters.value[row] 
+        }
     }
     
     func fetchCharacters() {

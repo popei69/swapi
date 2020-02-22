@@ -13,10 +13,9 @@ protocol CharacterFetchable {
     func getAllCharacters(_ completion: @escaping (Result<[Character], ErrorType>) -> ())
 }
 
-class CharacterFetcher: CharacterFetchable {
+class CharacterFetcher: RequestFetcher, CharacterFetchable {
  
     private let host = "https://swapi.co"
-    private var task : URLSessionTask?
     
     private func makeUrlString(_ page: Int?) -> String? {
         var urlComponents = URLComponents(string: host)
@@ -66,24 +65,13 @@ class CharacterFetcher: CharacterFetchable {
     }
     
     func getCharacterResponse(_ page: Int = 1, completion: @escaping (Result<CharacterResponse, ErrorType>) -> ()) {
-        
-        // stop previous request before starting new one
-        self.cancelRequest()
-        
         guard let urlString = makeUrlString(page) else {
             completion(.failure(.wrongUrlRequest))
             return
         }
         
-        task = RequestFactory.getData(urlString) { result in
-            completion(JsonFormatter().decode(result))
-        }
-    }
-    
-    private func cancelRequest() {
-        if let task = task {
-            task.cancel()
-        }
-        task = nil
+        print("Loading character page \(page)")
+        
+        fetchContent(urlString, completion: completion)
     }
 } 

@@ -37,7 +37,7 @@ class CharacterTests: XCTestCase {
             XCTAssertEqual(character.skinColor, "fair")
             XCTAssertEqual(character.eyeColor, "blue")
             XCTAssertEqual(character.birthYear, "19BBY")
-            XCTAssertEqual(character.filmEndpoints.count, 5)
+            XCTAssertEqual(character.films.count, 5)
         }
     }
     

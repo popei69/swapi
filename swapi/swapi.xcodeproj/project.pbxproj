@@ -10,6 +10,12 @@
 		1435D00223FD85C3006C1CF3 /* CharacterFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */; };
 		147CC14F2400E2C800F6093C /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC14E2400E2C800F6093C /* ErrorType.swift */; };
 		147CC1512400E36D00F6093C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC1502400E36D00F6093C /* UIViewController+Extensions.swift */; };
+		147CC1532400ED5D00F6093C /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC1522400ED5D00F6093C /* CharacterDetailViewController.swift */; };
+		147CC1552400EEA600F6093C /* RequestFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC1542400EEA600F6093C /* RequestFetcher.swift */; };
+		147CC1572401061400F6093C /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC1562401061400F6093C /* FilmCell.swift */; };
+		147CC15A2401087500F6093C /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC1592401087500F6093C /* CharacterDetailViewModel.swift */; };
+		147CC1612401099400F6093C /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC1602401099400F6093C /* CharacterListViewModelTests.swift */; };
+		147CC16324010DCF00F6093C /* CharacterDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC16224010DCF00F6093C /* CharacterDetailViewModelTests.swift */; };
 		F15550F423FE62E500A16B37 /* CharacterResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = F15550F323FE62E500A16B37 /* CharacterResponse.json */; };
 		F15550F823FE680800A16B37 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15550F723FE680800A16B37 /* Observable.swift */; };
 		F15550FC23FE6E0800A16B37 /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15550FB23FE6E0800A16B37 /* CharacterResponse.swift */; };
@@ -48,6 +54,12 @@
 		1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFetcher.swift; sourceTree = "<group>"; };
 		147CC14E2400E2C800F6093C /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		147CC1502400E36D00F6093C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		147CC1522400ED5D00F6093C /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		147CC1542400EEA600F6093C /* RequestFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFetcher.swift; sourceTree = "<group>"; };
+		147CC1562401061400F6093C /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
+		147CC1592401087500F6093C /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		147CC1602401099400F6093C /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
+		147CC16224010DCF00F6093C /* CharacterDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModelTests.swift; sourceTree = "<group>"; };
 		F15550F323FE62E500A16B37 /* CharacterResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CharacterResponse.json; sourceTree = "<group>"; };
 		F15550F523FE631600A16B37 /* CharacterResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponseTests.swift; sourceTree = "<group>"; };
 		F15550F723FE680800A16B37 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -102,6 +114,23 @@
 			path = Decoder;
 			sourceTree = "<group>";
 		};
+		147CC1582401069500F6093C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				147CC1562401061400F6093C /* FilmCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		147CC15B240108D700F6093C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				147CC1602401099400F6093C /* CharacterListViewModelTests.swift */,
+				147CC16224010DCF00F6093C /* CharacterDetailViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F15550F923FE6DCD00A16B37 /* Business */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +144,11 @@
 		F15550FA23FE6DDC00A16B37 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				147CC1582401069500F6093C /* Cells */,
 				F155510123FE6E4700A16B37 /* CharacterListViewModel.swift */,
 				F17160E923FD198E00D2F804 /* CharacterListViewController.swift */,
+				147CC1522400ED5D00F6093C /* CharacterDetailViewController.swift */,
+				147CC1592401087500F6093C /* CharacterDetailViewModel.swift */,
 				147CC1502400E36D00F6093C /* UIViewController+Extensions.swift */,
 			);
 			path = View;
@@ -169,6 +201,7 @@
 		F17160FB23FD199000D2F804 /* swapiTests */ = {
 			isa = PBXGroup;
 			children = (
+				147CC15B240108D700F6093C /* ViewModel */,
 				F171611A23FD3BC900D2F804 /* WordCounterTests.swift */,
 				F155510623FE6F6000A16B37 /* Business */,
 				F171611123FD200500D2F804 /* Mocks */,
@@ -181,10 +214,10 @@
 		F171610723FD19A400D2F804 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				147CC14E2400E2C800F6093C /* ErrorType.swift */,
 				1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */,
 				F15550F723FE680800A16B37 /* Observable.swift */,
 				F15550F923FE6DCD00A16B37 /* Business */,
-				147CC14E2400E2C800F6093C /* ErrorType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				F171611D23FD405300D2F804 /* RequestFactory.swift */,
+				147CC1542400EEA600F6093C /* RequestFetcher.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -325,14 +359,18 @@
 				147CC14F2400E2C800F6093C /* ErrorType.swift in Sources */,
 				1435D00223FD85C3006C1CF3 /* CharacterFetcher.swift in Sources */,
 				F171611E23FD405300D2F804 /* RequestFactory.swift in Sources */,
+				147CC1572401061400F6093C /* FilmCell.swift in Sources */,
+				147CC1552400EEA600F6093C /* RequestFetcher.swift in Sources */,
 				F17160EA23FD198E00D2F804 /* CharacterListViewController.swift in Sources */,
 				F171611923FD3B6200D2F804 /* WordCounter.swift in Sources */,
 				F171610923FD19C700D2F804 /* Film.swift in Sources */,
 				F171610B23FD1A8000D2F804 /* Character.swift in Sources */,
 				F15550F823FE680800A16B37 /* Observable.swift in Sources */,
 				F17160E623FD198E00D2F804 /* AppDelegate.swift in Sources */,
+				147CC1532400ED5D00F6093C /* CharacterDetailViewController.swift in Sources */,
 				147CC1512400E36D00F6093C /* UIViewController+Extensions.swift in Sources */,
 				F171610E23FD1C4000D2F804 /* JsonFormatter.swift in Sources */,
+				147CC15A2401087500F6093C /* CharacterDetailViewModel.swift in Sources */,
 				F155510223FE6E4700A16B37 /* CharacterListViewModel.swift in Sources */,
 				F17160E823FD198E00D2F804 /* SceneDelegate.swift in Sources */,
 			);
@@ -342,10 +380,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147CC16324010DCF00F6093C /* CharacterDetailViewModelTests.swift in Sources */,
 				F155510423FE6F5400A16B37 /* FilmTests.swift in Sources */,
 				F17160FD23FD199000D2F804 /* swapiTests.swift in Sources */,
 				F155510523FE6F5900A16B37 /* CharacterResponseTests.swift in Sources */,
 				F155510723FE6F7300A16B37 /* WordCounterTests.swift in Sources */,
+				147CC1612401099400F6093C /* CharacterListViewModelTests.swift in Sources */,
 				F155510323FE6F4800A16B37 /* CharacterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

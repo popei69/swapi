@@ -19,8 +19,7 @@ struct Character: Codable {
     let eyeColor: String
     let birthYear: String
     
-    let filmEndpoints: [String]
-    var films: [Film]?
+    let films: [String]
     
     private enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -31,6 +30,6 @@ struct Character: Codable {
         case skinColor = "skin_color"
         case eyeColor = "eye_color"
         case birthYear = "birth_year"
-        case filmEndpoints = "films"
+        case films = "films"
     }
 }

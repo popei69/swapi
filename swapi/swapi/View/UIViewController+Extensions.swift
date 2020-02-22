@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController: Identifiable {
+extension NSObject: Identifiable {
     var id: String { return self.description }
 }
 
