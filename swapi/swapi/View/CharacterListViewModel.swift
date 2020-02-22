@@ -21,12 +21,14 @@ protocol CharacterListViewModelType {
     var input: CharacterListViewModelInput { get }
     var output: CharacterListViewModelOutput { get }
     
-    func fetchCharacters(_ fetchable: CharacterFetchable)
+    func fetchCharacters()
 }
 
 final class CharacterListViewModel: NSObject, CharacterListViewModelType {
     var input: CharacterListViewModelInput
     var output: CharacterListViewModelOutput
+    
+    private var characterFetchable: CharacterFetchable
     
     struct Input: CharacterListViewModelInput {
         var tapIndex = Observable<IndexPath?>(nil)
@@ -37,21 +39,27 @@ final class CharacterListViewModel: NSObject, CharacterListViewModelType {
         var errorHandler = Observable<Error?>(nil)
     }
     
-    override init() {
+    init(fetchable: CharacterFetchable = CharacterFetcher()) {
         self.input = Input()
         self.output = Output()
+        self.characterFetchable = fetchable
         super.init()
     }
     
-    func fetchCharacters(_ fetchable: CharacterFetchable) {
+    func fetchCharacters() {
         
-        fetchable.getCharacters(nil) { [weak self] result in
+        characterFetchable.getAllCharacters() { [weak self] result in
             switch result {
             case .failure(let error):
                 self?.output.errorHandler.value = error
-            case .success(let response):
-                self?.output.characters.value = response.sortedCharacters
+            case .success(var characters):
+                self?.sortedCharacters(&characters)
+                self?.output.characters.value = characters
             }
         }
+    }
+    
+    func sortedCharacters(_ characters: inout [Character]) {
+        characters.sort(by: { $0.name < $1.name })
     }
 }

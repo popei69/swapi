@@ -15,12 +15,12 @@ class CharacterListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Characters"
+        self.title = "Star Wars Characters"
         self.tableView.dataSource = viewModel
         
         // bind elements to datasource
         self.bindView(to: viewModel)
-        viewModel.fetchCharacters(CharacterFetcher())
+        viewModel.fetchCharacters()
     }
     
     private func bindView(to viewModel: CharacterListViewModelType) {
@@ -30,8 +30,10 @@ class CharacterListViewController: UIViewController {
             }
         }
         
-        viewModel.output.errorHandler.subscribe(self) { error in
-            print(error)
+        viewModel.output.errorHandler.subscribe(self) { [weak self] error in
+            DispatchQueue.main.async {
+                self?.showAlertWithError(error)
+            }
         }
     }
 }
@@ -49,9 +51,4 @@ extension CharacterListViewModel: UITableViewDataSource {
         cell.textLabel?.text = character.name
         return cell
     }
-}
-
-
-extension UIViewController: Identifiable {
-    var id: String { return self.description }
 }

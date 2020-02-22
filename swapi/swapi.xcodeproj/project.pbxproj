@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1435D00223FD85C3006C1CF3 /* CharacterFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */; };
+		147CC14F2400E2C800F6093C /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC14E2400E2C800F6093C /* ErrorType.swift */; };
+		147CC1512400E36D00F6093C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147CC1502400E36D00F6093C /* UIViewController+Extensions.swift */; };
 		F15550F423FE62E500A16B37 /* CharacterResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = F15550F323FE62E500A16B37 /* CharacterResponse.json */; };
 		F15550F823FE680800A16B37 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15550F723FE680800A16B37 /* Observable.swift */; };
 		F15550FC23FE6E0800A16B37 /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15550FB23FE6E0800A16B37 /* CharacterResponse.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFetcher.swift; sourceTree = "<group>"; };
+		147CC14E2400E2C800F6093C /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
+		147CC1502400E36D00F6093C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F15550F323FE62E500A16B37 /* CharacterResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CharacterResponse.json; sourceTree = "<group>"; };
 		F15550F523FE631600A16B37 /* CharacterResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponseTests.swift; sourceTree = "<group>"; };
 		F15550F723FE680800A16B37 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			children = (
 				F155510123FE6E4700A16B37 /* CharacterListViewModel.swift */,
 				F17160E923FD198E00D2F804 /* CharacterListViewController.swift */,
+				147CC1502400E36D00F6093C /* UIViewController+Extensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				1435D00123FD85C3006C1CF3 /* CharacterFetcher.swift */,
 				F15550F723FE680800A16B37 /* Observable.swift */,
 				F15550F923FE6DCD00A16B37 /* Business */,
+				147CC14E2400E2C800F6093C /* ErrorType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F15550FC23FE6E0800A16B37 /* CharacterResponse.swift in Sources */,
+				147CC14F2400E2C800F6093C /* ErrorType.swift in Sources */,
 				1435D00223FD85C3006C1CF3 /* CharacterFetcher.swift in Sources */,
 				F171611E23FD405300D2F804 /* RequestFactory.swift in Sources */,
 				F17160EA23FD198E00D2F804 /* CharacterListViewController.swift in Sources */,
@@ -324,6 +331,7 @@
 				F171610B23FD1A8000D2F804 /* Character.swift in Sources */,
 				F15550F823FE680800A16B37 /* Observable.swift in Sources */,
 				F17160E623FD198E00D2F804 /* AppDelegate.swift in Sources */,
+				147CC1512400E36D00F6093C /* UIViewController+Extensions.swift in Sources */,
 				F171610E23FD1C4000D2F804 /* JsonFormatter.swift in Sources */,
 				F155510223FE6E4700A16B37 /* CharacterListViewModel.swift in Sources */,
 				F17160E823FD198E00D2F804 /* SceneDelegate.swift in Sources */,

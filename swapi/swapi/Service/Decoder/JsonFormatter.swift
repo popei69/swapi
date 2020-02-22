@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum ErrorType: Error {
-    case wrongFormat
-    case wrongUrlRequest
-}
-
 final class JsonFormatter {
     
     func decode<T: Decodable>(_ data: Data) -> Result<T,ErrorType> {
